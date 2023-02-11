@@ -3,9 +3,6 @@ import './App.css';
 import React, { Component } from 'react';
 import KeyPad from './components/KeyPad';
 import Display from './components/Display';
-// const display = document.getElementById("display").innerHTML;
-// const buttons = document.getElementsByClassName("buttons");
-
 
 class App extends Component {
   state = {
@@ -19,14 +16,15 @@ class App extends Component {
         result:eval(eval(this.state.result)+'/100')
       })
     } 
-    else if(button == '+/-'){
-      if(this.state.result.charAt(this.state.result.length-1)=='+'){
+    // to negate the + and - operators
+    else if(button === '+/-'){
+      if(this.state.result.charAt(this.state.result.length-1)==='+'){
         this.setState({
           // str1.slice(0, -1){
           result:this.state.result.slice(0,-1)+'-'
         })
       }
-      else if(this.state.result.charAt(this.state.result.length-1)=='-'){
+      else if(this.state.result.charAt(this.state.result.length-1)==='-'){
           this.setState({
             // str1.slice(0, -1){
               result:this.state.result.slice(0,-1)+'+'
@@ -40,6 +38,7 @@ class App extends Component {
       }
       
     }
+    // to eval the expression and set the state
     else if(button === "="){
       if(this.state.result.includes("--")){
         this.setState({
@@ -58,6 +57,7 @@ class App extends Component {
       
       // console.log("The link was clicked"+this.state.result); 
     }
+    // clear the display and state
     else if(button === "AC"){
       this.setState({
         result :""
@@ -72,12 +72,19 @@ class App extends Component {
       catch{
         lastChar = this.state.result;
       }
-      
-      console.log(lastChar+" last character");
-      if(lastChar ==='+' || lastChar === '-' || lastChar==='*' || lastChar=== '/'){
+      // to avoid 1st character of expression as operators
+      // console.log(lastChar+" last character");
+      if(lastChar===""){
+        this.setState({
+          // str1.slice(0, -1) //debug
+          result:""
+        })
+      }
+      // to avoid multiple continuous operators i.e + / *
+      else if(lastChar ==='+' || lastChar === '-' || lastChar==='*' || lastChar=== '/'){
         // console.log("last charcter inside");
         this.setState({
-          // str1.slice(0, -1){
+          // str1.slice(0, -1) //debug
           result:this.state.result.slice(0,-1)+button
         })
         console.log("last charcter inside"+this.state.result);
@@ -113,6 +120,7 @@ class App extends Component {
       <div className="calculator-container">
         {/* conditional rendering to handle mathematical exceptions*/}
         {renderDisplay()}
+        {/* Keypad woth obclick button handle */}
         <KeyPad onClick={this.onClick}/>
       </div>
       </div>
