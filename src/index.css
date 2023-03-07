@@ -4,10 +4,10 @@ body {
 }
 /* calculator container design */
 .calculator-container {
-  height: 410px;
-  width: 270px;
-  background-color: rgb(32, 32, 29);
-  border-color: black;
+  height: 27rem;
+  width: 17rem;
+  background-color: rgb(11, 11, 11);
+  border-color: rgb(28, 21, 57);
   border-radius: 5%;
   align-items: center;
   position: absolute;
@@ -19,7 +19,7 @@ body {
 }
 /* heading design */
 #heading {
-  height: 25px;
+  /* height: 25px; */
   width: 95%;
   text-align: center;
   font-size: 20px;
@@ -36,7 +36,7 @@ body {
   position: relative;
   width: 85%;
   border-radius: 5%;
-  background-color: rgb(41, 41, 36);
+  background-color: rgb(42, 39, 39);
   margin: 5px 5px 5px 5px;
   margin: auto;
   margin-top: 2%;
@@ -62,7 +62,7 @@ button {
   border-radius: 50%;
   align-self: center;
   color: antiquewhite;
-  background-color: rgb(11, 11, 11);
+  background-color: rgb(42, 39, 39);
 }
 /* Operators */
 .operators{
