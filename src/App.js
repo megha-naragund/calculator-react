@@ -9,8 +9,9 @@ class App extends Component {
     result: ""
   }
   onClick=button=>{
-    console.log("The link was clicked"+button);
+    console.log("The link was clicked"+button+" " +(button === 'backspace'));
     // to specify % should be used as percentage instead of mod
+    
     if(button === "%"){
       this.setState({
         result:eval(eval(this.state.result)+'/100')
@@ -95,6 +96,21 @@ class App extends Component {
         }) 
       }
     }
+    else if(button == 'backspace'){
+      console.log("The link was clicked backspace !!" + this.state.result);
+      if(this.state.result.length>1 ){
+        this.setState({
+          result :this.state.result.slice(0,-1)
+        })
+        
+      }
+      else{
+        this.setState({
+          result : ""
+        })
+      }
+      
+    }
     else{
       this.setState({
         result: this.state.result+button
@@ -119,6 +135,7 @@ class App extends Component {
       
       <div className="calculator-container">
         {/* conditional rendering to handle mathematical exceptions*/}
+        
         {renderDisplay()}
         {/* Keypad woth obclick button handle */}
         <KeyPad onClick={this.onClick}/>
