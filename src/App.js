@@ -131,7 +131,7 @@ class App extends Component {
     }
     return (
       <div>
-         <h1 id='heading'>Calculator</h1>
+      {/* <h1 id='heading'>Calculator</h1> */}
       
       <div className="calculator-container">
         {/* conditional rendering to handle mathematical exceptions*/}
