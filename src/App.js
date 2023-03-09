@@ -59,7 +59,7 @@ class App extends Component {
       // console.log("The link was clicked"+this.state.result); 
     }
     // clear the display and state
-    else if(button === "AC"){
+    else if(button === "C"){
       this.setState({
         result :""
       })
