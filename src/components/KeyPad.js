@@ -7,7 +7,7 @@ class KeyPad extends Component{
             <div className="keypad">
             {/* Button and operator of the calculator */}
             <div className="buttons" >
-            <button style={{color:'blue'}} onClick={e => this.props.onClick(e.target.innerHTML)}>AC</button>
+            <button style={{color:'white'}} onClick={e => this.props.onClick(e.target.innerHTML)}>C</button>
             <button onClick={e => this.props.onClick(e.target.innerHTML)}>+/-</button>
             <button onClick={e => this.props.onClick(e.target.innerHTML)}>%</button>
             <button className ="operators" onClick={e => this.props.onClick(e.target.innerHTML)}>/</button>
